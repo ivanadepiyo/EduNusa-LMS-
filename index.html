@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EduNusa LMS — Belajar Lebih Mudah</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="#" data-page="Beranda"><img class="brand-logo" src="logo-edunusa.png" alt="Logo EduNusa LMS"><span><b>EduNusa LMS</b><small>Belajar Lebih Mudah, Raih Masa Depan</small></span></a>
+    <nav id="mainNav">
+      <button class="nav-item active" data-page="Beranda">🏠<span>Beranda</span></button>
+      <button class="nav-item" data-page="Mata Kuliah"> 📚  <span>Mata Kuliah</span></button>
+      <button class="nav-item" data-page="Tugas">📋<span>Tugas</span></button>
+      <button class="nav-item" data-page="Nilai">📊 <span>Nilai</span></button>
+      <button class="nav-item" data-page="Pengumuman">📢<span>Pengumuman</span></button>
+      <button class="nav-item" data-page="Kalender">🗓️ <span>Kalender</span></button>
+      <button class="nav-item" data-page="Profil">👨‍🎓 <span>Profil</span></button>
+    </nav>
+    <div class="sidebar-note">
+     
+      <b>Semangat terus!</b>
+      <p>Satu langkah kecil hari ini, satu prestasi besar esok hari.</p>
+    </div>
+    <div class="sidebar-bottom">Versi demo · EduNusa LMS</div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Buka menu">☰</button>
+      <label class="search"><span>⌕</span><input id="globalSearch" placeholder="Cari mata kuliah, tugas, atau pengumuman…"></label>
+      <div class="top-actions">
+        <button class="icon-btn notification-btn" id="notificationBtn" title="Notifikasi">🔔<i id="notificationDot"></i></button>
+        <button class="user-chip" id="profileShortcut"><span class="avatar">IA</span><span><b id="userNameTop">Ivan Adepiyo</b><small>Mahasiswa</small></span><span>⌄</span></button>
+      </div>
+    </header>
+
+    <section class="page active" id="page-Beranda">
+      <div class="welcome">
+        <div class="welcome-copy">
+          <p class="eyebrow">DASHBOARD MAHASISWA</p>
+          <h1>Halo, <span id="welcomeName">Ivan Adepiyo</span> 👋</h1>
+          <p>Selamat datang kembali di EduNusa LMS.</p>
+          <p class="muted">Terus semangat belajar dan raih cita-citamu!</p>
+        </div>
+        <div class="welcome-art" aria-hidden="true"><img src="tema.jpg" alt=""></div>
+      </div>
+
+      <div class="quick-tip"><span class="tip-spark">✦</span><span><b>Ruang belajar digitalmu</b> — pantau progres, selesaikan tugas, dan raih target minggu ini.</span><span class="tip-tag">SEMANGAT BELAJAR</span></div><div class="stat-grid">
+        <button class="stat-card" data-page="Mata Kuliah"><span class="stat-icon purple">📚</span><span><small>Mata Kuliah</small><strong id="statCourses">6</strong><small>mata kuliah aktif</small></span><span class="stat-arrow">↗</span></button>
+        <button class="stat-card" data-page="Tugas"><span class="stat-icon green">📋</span><span><small>Tugas Aktif</small><strong id="statTasks">5</strong><small>perlu diperhatikan</small></span><span class="stat-arrow">↗</span></button>
+        <button class="stat-card" data-page="Nilai"><span class="stat-icon blue">📝</span><span><small>Nilai</small><strong> A− </strong><small>rata-rata simulasi</small></span><span class="stat-arrow">↗</span></button>
+        <button class="stat-card" data-page="Pengumuman"><span class="stat-icon orange">🗓️</span><span><small>Pengumuman</small><strong id="statAnnouncements">3</strong><small>informasi terbaru</small></span><span class="stat-arrow">↗</span></button>
+      </div>
+      <div class="dashboard-grid">
+        <section class="panel">
+          <div class="section-heading"><div><p class="eyebrow">AKTIVITAS AKADEMIK</p><h2>Mata Kuliah Saya</h2></div><button class="text-btn" data-page="Mata Kuliah">Lihat semua →</button></div>
+          <div class="course-grid" id="homeCourses"></div>
+        </section>
+        <div class="stack">
+          <section class="panel">
+            <div class="section-heading"><div><p class="eyebrow">JANGAN TERLEWAT</p><h2>Tugas Mendatang</h2></div><button class="text-btn" data-page="Tugas">Lihat semua →</button></div>
+            <div id="homeTasks" class="compact-list"></div>
+          </section>
+          <section class="panel">
+            <div class="section-heading"><div><p class="eyebrow">INFO KAMPUS</p><h2>Pengumuman Terbaru</h2></div><button class="text-btn" data-page="Pengumuman">Lihat semua →</button></div>
+            <div id="homeAnnouncements" class="announcement-mini"></div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="page-Mata Kuliah">
+      <div class="page-heading"><div><p class="eyebrow">RUANG BELAJAR</p><h1>Mata Kuliah</h1><p class="muted">Kelola mata kuliah dan pantau progres belajarmu.</p></div><button class="primary-btn" id="addCourseBtn">＋ Tambah Mata Kuliah</button></div>
+      <div class="toolbar"><label class="search"><span>⌕</span><input class="local-search" data-target="coursesList" placeholder="Cari mata kuliah…"></label><select id="courseFilter"><option value="all">Semua kategori</option><option value="Teknologi">Teknologi</option><option value="Manajemen">Manajemen</option><option value="Umum">Umum</option></select></div>
+      <div class="course-grid full-grid" id="coursesList"></div>
+    </section>
+
+    <section class="page" id="page-Tugas">
+      <div class="page-heading"><div><p class="eyebrow">PANTAU DEADLINE</p><h1>Daftar Tugas</h1><p class="muted">Kelola dan pantau semua tugas kuliahmu.</p></div><button class="primary-btn" id="addTaskBtn">＋ Tambah Tugas</button></div>
+      <div class="toolbar"><label class="search"><span>⌕</span><input class="local-search" data-target="tasksTableBody" placeholder="Cari tugas…"></label><select id="taskCourseFilter"><option value="all">Semua Mata Kuliah</option></select><select id="taskStatusFilter"><option value="all">Semua Status</option><option value="Belum dikerjakan">Belum dikerjakan</option><option value="Sedang dikerjakan">Sedang dikerjakan</option><option value="Sudah dikumpulkan">Sudah dikumpulkan</option></select></div>
+      <div class="panel table-panel"><div class="table-wrap"><table><thead><tr><th>Nama Tugas</th><th>Mata Kuliah</th><th>Tenggat</th><th>Status</th><th>Aksi</th></tr></thead><tbody id="tasksTableBody"></tbody></table></div><div class="table-foot"><span id="taskCount">0 tugas</span><span>Data demo tersimpan di browser ini</span></div></div>
+    </section>
+
+    <section class="page" id="page-Nilai">
+      <div class="page-heading"><div><p class="eyebrow">HASIL PEMBELAJARAN</p><h1>Nilai Akademik</h1><p class="muted">Contoh tampilan rekap nilai. Nilai ini bukan nilai resmi kampus.</p></div><button class="secondary-btn" id="exportGrades">⇩ Ekspor CSV</button></div>
+      <div class="stat-grid grade-stats"><div class="stat-card"><span class="stat-icon blue">🏅</span><span><small>IPK Simulasi</small><strong>3,72</strong><small>dari skala 4,00</small></span></div><div class="stat-card"><span class="stat-icon green">✓</span><span><small>Mata Kuliah</small><strong>6</strong><small>terdaftar</small></span></div><div class="stat-card"><span class="stat-icon purple">★</span><span><small>Nilai Tertinggi</small><strong>A</strong><small>Dasar Pemrograman</small></span></div></div>
+      <div class="panel table-panel"><div class="section-heading"><div><h2>Rekap Nilai per Mata Kuliah</h2><p class="muted">Gunakan sebagai contoh desain antarmuka.</p></div></div><div class="table-wrap"><table><thead><tr><th>Mata Kuliah</th><th>Tugas</th><th>Ujian</th><th>Nilai Akhir</th><th>Huruf</th></tr></thead><tbody id="gradesBody"></tbody></table></div></div>
+    </section>
+
+    <section class="page" id="page-Pengumuman">
+      <div class="page-heading"><div><p class="eyebrow">INFORMASI TERKINI</p><h1>Pengumuman</h1><p class="muted">Informasi penting seputar aktivitas akademik.</p></div><button class="secondary-btn" id="markAllRead">Tandai semua dibaca</button></div>
+      <div class="announcement-list" id="announcementsList"></div>
+    </section>
+
+    <section class="page" id="page-Kalender">
+      <div class="page-heading"><div><p class="eyebrow">ATUR JADWALMU</p><h1>Kalender Akademik</h1><p class="muted">Catat tenggat tugas dan rencanakan kegiatan.</p></div><button class="primary-btn" id="addEventBtn">＋ Tambah agenda</button></div>
+      <div class="panel calendar-panel"><div class="calendar-head"><button class="icon-btn" id="prevMonth">←</button><h2 id="monthLabel"></h2><button class="icon-btn" id="nextMonth">→</button></div><div class="calendar-grid" id="calendarGrid"></div><div class="calendar-legend"><span><i class="legend-dot"></i> Agenda / tenggat</span><span id="selectedDateLabel"></span></div><div id="dayEvents" class="day-events"></div></div>
+    </section>
+
+    <section class="page" id="page-Profil">
+      <div class="page-heading"><div><p class="eyebrow">AKUN MAHASISWA</p><h1>Profil Saya</h1><p class="muted">Perbarui informasi profil untuk demo antarmuka.</p></div></div>
+      <div class="profile-layout"><div class="panel profile-card"><div class="avatar avatar-large">IA</div><h2 id="profileDisplayName">Ivan Adepiyo</h2><p class="muted">Mahasiswa · Sistem Informasi</p><span class="status-pill success">🟢 Akun aktif (demo)</span><hr><p class="muted">EduNusa LMS</p></div><form class="panel profile-form" id="profileForm"><h2>Informasi Profil</h2><label>Nama lengkap<input name="name" id="profileName" required value="Ivan Adepiyo"></label><label>Email<input name="email" id="profileEmail" type="email" value="ivan@example.com" required></label><label>Program studi<input name="program" id="profileProgram" value="Sistem Informasi" required></label><label>Bio singkat<textarea name="bio" id="profileBio" rows="3" placeholder="Ceritakan tujuan belajarmu…"></textarea></label><button class="primary-btn" type="submit">Simpan perubahan</button><p class="form-note" id="profileMessage" aria-live="polite"></p></form></div>
+    </section>
+    <footer>© 2026 EduNusa LMS <span>Prototype antarmuka untuk tugas IMK · Data contoh, bukan sistem kampus resmi.</span></footer>
+  </main>
+
+  <dialog id="itemDialog"><form method="dialog" id="itemForm"><div class="dialog-head"><div><p class="eyebrow">EDUNUSA LMS</p><h2 id="dialogTitle">Tambah data</h2></div><button class="icon-btn" value="cancel" aria-label="Tutup">×</button></div><div id="dialogFields" class="dialog-fields"></div><div class="dialog-actions"><button class="secondary-btn" value="cancel">Batal</button><button class="primary-btn" id="dialogSave" value="save">Simpan</button></div></form></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
